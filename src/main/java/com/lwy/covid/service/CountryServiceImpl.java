@@ -25,17 +25,13 @@ public class CountryServiceImpl implements CountryService {
         return countryMapper.selectAllByCountryName(name);
     }
 
-    @Override
-    public List<Country> getAllById(Integer id) {
-        return countryMapper.selectAllByCountryId(id);
-    }
 
     @Override
-    public List<Country> getAllByTime(Date date) {
+    public List<Country> getAllByTime(String date) {
         // sdf 线程不安全的
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String format = sdf.format(date);
-        return countryMapper.selectAllByTime(format);
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//        String format = sdf.format(date);
+        return countryMapper.selectAllByTime(date);
     }
 
     @Override

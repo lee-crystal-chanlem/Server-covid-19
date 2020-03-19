@@ -35,10 +35,10 @@ public class ApplicationTest {
 //        c.setCountryId(2);
 //        c.setCountryName("cn");
 //        countryService.insertCountry(c);
-        List<Country> all = countryService.getAllByTime(new Date());
-        System.out.println("大小: "+all.size());
-        for(Country c:all){
-            System.out.println(c);
-        }
+//        List<Country> all = countryService.getAllByTime(new Date());
+//        System.out.println("大小: "+all.size());
+//        for(Country c:all){
+//            System.out.println(c);
+//        }
     }
 }

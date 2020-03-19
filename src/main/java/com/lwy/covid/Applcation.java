@@ -3,9 +3,12 @@ package com.lwy.covid;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.lwy.covid.config.CrosFilter;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -31,5 +34,17 @@ public class Applcation extends WebMvcConfigurerAdapter {
         config.setSerializerFeatures(SerializerFeature.PrettyFormat);
         convert.setFastJsonConfig(config);
         converters.add(convert);
+    }
+
+    /**
+     * 配置跨域访问的过滤器
+     * @return
+     */
+    @Bean
+    public FilterRegistrationBean registerFilter(){
+        FilterRegistrationBean bean = new FilterRegistrationBean();
+        bean.addUrlPatterns("/*");
+        bean.setFilter(new CrosFilter());
+        return bean;
     }
 }

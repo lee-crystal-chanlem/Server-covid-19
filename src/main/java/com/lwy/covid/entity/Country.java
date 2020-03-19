@@ -20,13 +20,13 @@ import java.util.Date;
 @Data
 @ToString
 public class Country {
-
-    private Integer countryId;
+    private Integer ID;
 
     private String countryName;
 
+    // 为了格式化Object的时候的输出
     @JSONField(format="yyyy-MM-dd")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    //@DateTimeFormat(pattern = "yyyy-MM-dd") 本来目标是Country作为前面RequestBody来解析的 但是好像没有必要
     private Date time;
 
     private Integer confirmNum;

@@ -7,12 +7,7 @@ import java.util.List;
 
 public interface CountryMapper {
 
-    /**
-     * 根据ID找相应国家所有数据
-     * @param id
-     * @return
-     */
-    List<Country> selectAllByCountryId(Integer id);
+
 
     /**
      * 根据Name找相应国家所有数据

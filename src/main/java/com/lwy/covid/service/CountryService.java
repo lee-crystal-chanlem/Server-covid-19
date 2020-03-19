@@ -15,9 +15,7 @@ public interface CountryService {
 
     List<Country> getAllByName(String name);
 
-    List<Country> getAllById(Integer id);
-
-    List<Country> getAllByTime(Date date);
+    List<Country> getAllByTime(String date);
 
     void insertCountry(Country country);
 

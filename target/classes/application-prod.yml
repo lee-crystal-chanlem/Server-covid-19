@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    c3p0:
+      jdbcUrl: jdbc:mysql://172.17.0.11:3306/covid?useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
+      user: root
+      password: admin
+      driver: com.mysql.jdbc.Driver
+      minPoolSize: 2
+      maxPoolSize: 10
+      maxIdleTime: 1800000
+      acquireIncrement: 3
+      maxStatements: 1000
+      initialPoolSize: 3
+      idleConnectionTestPeriod: 60
+      acquireRetryAttempts: 30
+      acquireRetryDelay: 1000
+      breakAfterAcquireFailure: false
+      testConnectionOnCheckout: false
+
+server:
+  port: 8080
+
+mybatis:
+  type-aliases-package: com.lwy.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: false
